@@ -35,9 +35,17 @@ serve(async (req) => {
               {
                 text: message
               }
-            ]
+            ],
+            role: "user"
           }
         ],
+        systemInstruction: {
+          parts: [
+            {
+              text: "You are Gemini 1.5 Flash, a large language model developed by Google. You are helpful, harmless, and honest. When asked about your identity, you should identify yourself as Gemini 1.5 Flash."
+            }
+          ]
+        },
         generationConfig: {
           temperature: 0.9,
           topK: 1,
