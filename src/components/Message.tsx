@@ -30,7 +30,14 @@ const Message: React.FC<MessageProps> = ({ content, isAI, timestamp }) => {
             {isAI ? 'AI Assistant' : 'You'}
           </span>
           <span className="text-xs text-muted-foreground">
-            {new Date(timestamp).toLocaleTimeString()}
+            {new Date(timestamp).toLocaleString(undefined, {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit'
+            })}
           </span>
         </div>
         <div className="text-sm whitespace-pre-wrap">
