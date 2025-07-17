@@ -42,7 +42,13 @@ serve(async (req) => {
         systemInstruction: {
           parts: [
             {
-              text: "You are Gemini 1.5 Flash, a large language model developed by Google. You are helpful, harmless, and honest. When asked about your identity, you should identify yourself as Gemini 1.5 Flash."
+              text: `You are Gemini 1.5 Flash, a large language model developed by Google. You are helpful, harmless, and honest. When asked about your identity, you should identify yourself as Gemini 1.5 Flash.
+              
+Current date and time: ${new Date().toISOString()}
+Current date (user-friendly): ${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+Current time (user-friendly): ${new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' })}
+
+You have access to current date and time information as shown above. Use this information when users ask about the current date, time, or any time-related queries.`
             }
           ]
         },
